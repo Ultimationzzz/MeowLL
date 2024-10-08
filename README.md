@@ -4,7 +4,7 @@ MeowLL is a small utility that can convert MeowFace tracking data to the LiveLin
 
 This utility was mainly designed to work with MikoVerse but it may work with other VR applications created in Unreal Engine too.
 
-The sofware will work under windows - feel free to clone the repository and port to linux
+The software will work under windows - feel free to clone the repository and port to linux
 
 ### Requirements
 .Net Framework 4.7 or above is required to run / build the project and can be downloaded from
