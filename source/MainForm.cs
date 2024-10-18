@@ -34,6 +34,8 @@ namespace MeowLL
             phoneIpInput.Text = Settings.Instance.PhoneIp;
             trackFacialCheckbox.Checked = Settings.Instance.TrackFacial;
             trackHeadCheckbox.Checked = Settings.Instance.TrackHead;
+            inputEyeSens.Value = (decimal)Settings.Instance.EyeSensitivity;
+            inputHeadSens.Value = (decimal)Settings.Instance.HeadSensitivity;
         }
 
         private void listenIpInput_SelectedValueChanged(object sender, EventArgs e)
@@ -98,6 +100,16 @@ namespace MeowLL
         {
             var about = new AboutForm();
             about.ShowDialog();
+        }
+
+        private void inputEyeSens_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Instance.EyeSensitivity = (float)inputEyeSens.Value;
+        }
+
+        private void inputHeadSens_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.Instance.HeadSensitivity = (float)inputHeadSens.Value;
         }
     }
 }

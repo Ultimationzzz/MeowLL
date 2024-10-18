@@ -49,11 +49,17 @@
             this.startButton = new System.Windows.Forms.Button();
             this.aboutButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelEyeSens = new System.Windows.Forms.Label();
+            this.inputEyeSens = new System.Windows.Forms.NumericUpDown();
+            this.inputHeadSens = new System.Windows.Forms.NumericUpDown();
+            this.labelHeadSens = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listenPortInput)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sendPortInput)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputEyeSens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputHeadSens)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -212,12 +218,16 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.inputHeadSens);
+            this.groupBox3.Controls.Add(this.labelHeadSens);
+            this.groupBox3.Controls.Add(this.inputEyeSens);
+            this.groupBox3.Controls.Add(this.labelEyeSens);
             this.groupBox3.Controls.Add(this.lookForwardButton);
             this.groupBox3.Controls.Add(this.trackHeadCheckbox);
             this.groupBox3.Controls.Add(this.trackFacialCheckbox);
             this.groupBox3.Location = new System.Drawing.Point(5, 186);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(349, 64);
+            this.groupBox3.Size = new System.Drawing.Size(349, 121);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Options";
@@ -262,7 +272,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(5, 256);
+            this.startButton.Location = new System.Drawing.Point(5, 313);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(349, 23);
             this.startButton.TabIndex = 6;
@@ -272,7 +282,7 @@
             // 
             // aboutButton
             // 
-            this.aboutButton.Location = new System.Drawing.Point(264, 285);
+            this.aboutButton.Location = new System.Drawing.Point(264, 342);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(90, 23);
             this.aboutButton.TabIndex = 7;
@@ -280,11 +290,77 @@
             this.aboutButton.UseVisualStyleBackColor = true;
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
+            // labelEyeSens
+            // 
+            this.labelEyeSens.AutoSize = true;
+            this.labelEyeSens.Location = new System.Drawing.Point(12, 70);
+            this.labelEyeSens.Name = "labelEyeSens";
+            this.labelEyeSens.Size = new System.Drawing.Size(78, 13);
+            this.labelEyeSens.TabIndex = 10;
+            this.labelEyeSens.Text = "Eye Sensitivity:";
+            // 
+            // inputEyeSens
+            // 
+            this.inputEyeSens.DecimalPlaces = 2;
+            this.inputEyeSens.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.inputEyeSens.Location = new System.Drawing.Point(96, 68);
+            this.inputEyeSens.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            65536});
+            this.inputEyeSens.Name = "inputEyeSens";
+            this.inputEyeSens.Size = new System.Drawing.Size(92, 20);
+            this.inputEyeSens.TabIndex = 11;
+            this.inputEyeSens.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
+            this.inputEyeSens.ValueChanged += new System.EventHandler(this.inputEyeSens_ValueChanged);
+            // 
+            // inputHeadSens
+            // 
+            this.inputHeadSens.DecimalPlaces = 2;
+            this.inputHeadSens.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.inputHeadSens.Location = new System.Drawing.Point(96, 92);
+            this.inputHeadSens.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            65536});
+            this.inputHeadSens.Name = "inputHeadSens";
+            this.inputHeadSens.Size = new System.Drawing.Size(92, 20);
+            this.inputHeadSens.TabIndex = 13;
+            this.inputHeadSens.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            65536});
+            this.inputHeadSens.ValueChanged += new System.EventHandler(this.inputHeadSens_ValueChanged);
+            // 
+            // labelHeadSens
+            // 
+            this.labelHeadSens.AutoSize = true;
+            this.labelHeadSens.Location = new System.Drawing.Point(4, 94);
+            this.labelHeadSens.Name = "labelHeadSens";
+            this.labelHeadSens.Size = new System.Drawing.Size(86, 13);
+            this.labelHeadSens.TabIndex = 12;
+            this.labelHeadSens.Text = "Head Sensitivity:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 308);
+            this.ClientSize = new System.Drawing.Size(359, 368);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.groupBox3);
@@ -303,6 +379,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sendPortInput)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputEyeSens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputHeadSens)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,6 +406,10 @@
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button lookForwardButton;
+        private System.Windows.Forms.Label labelEyeSens;
+        private System.Windows.Forms.NumericUpDown inputEyeSens;
+        private System.Windows.Forms.NumericUpDown inputHeadSens;
+        private System.Windows.Forms.Label labelHeadSens;
     }
 }
 

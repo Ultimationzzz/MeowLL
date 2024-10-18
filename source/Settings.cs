@@ -19,9 +19,9 @@ namespace MeowLL
 
         public bool TrackFacial { get; set; } = true;
         public bool TrackHead { get; set; } = true;
-
         public static Settings Instance { get; set; } = new ();
-
+        public float EyeSensitivity { get; set; } = 1.0f;
+        public float HeadSensitivity { get; set; } = 1.0f;  
         public static void Load()
         {
             var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json");

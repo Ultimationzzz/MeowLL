@@ -133,19 +133,19 @@ namespace MeowLL.MeowFace
                 //Json msg
                 if (TrackRotation)
                 {
-                    llMsg.Set(GenericShape.HeadYaw, json.Rotation.X * RadianConst);
-                    llMsg.Set(GenericShape.HeadPitch, -json.Rotation.Y * RadianConst);
-                    llMsg.Set(GenericShape.HeadRoll, json.Rotation.Z * RadianConst);
+                    llMsg.Set(GenericShape.HeadYaw, json.Rotation.X * RadianConst * Settings.Instance.HeadSensitivity);
+                    llMsg.Set(GenericShape.HeadPitch, -json.Rotation.Y * RadianConst * Settings.Instance.HeadSensitivity);
+                    llMsg.Set(GenericShape.HeadRoll, json.Rotation.Z * RadianConst * Settings.Instance.HeadSensitivity);
 
                     //RightEye
-                    llMsg.Set(GenericShape.RightEyePitch, json.EyeRight.X * RadianConst);
-                    llMsg.Set(GenericShape.RightEyeYaw, -json.EyeRight.Y * RadianConst);
-                    llMsg.Set(GenericShape.RightEyeRoll, json.EyeRight.Z * RadianConst);
+                    llMsg.Set(GenericShape.RightEyePitch, json.EyeRight.X * RadianConst * Settings.Instance.EyeSensitivity);
+                    llMsg.Set(GenericShape.RightEyeYaw, -json.EyeRight.Y * RadianConst * Settings.Instance.EyeSensitivity);
+                    llMsg.Set(GenericShape.RightEyeRoll, json.EyeRight.Z * RadianConst * Settings.Instance.EyeSensitivity);
 
                     //LeftEye
-                    llMsg.Set(GenericShape.LeftEyePitch, json.EyeLeft.X * RadianConst);
-                    llMsg.Set(GenericShape.LeftEyeYaw, -json.EyeLeft.Y * RadianConst);
-                    llMsg.Set(GenericShape.LeftEyeRoll, json.EyeLeft.Z * RadianConst);
+                    llMsg.Set(GenericShape.LeftEyePitch, json.EyeLeft.X * RadianConst * Settings.Instance.EyeSensitivity);
+                    llMsg.Set(GenericShape.LeftEyeYaw, -json.EyeLeft.Y * RadianConst * Settings.Instance.EyeSensitivity);
+                    llMsg.Set(GenericShape.LeftEyeRoll, json.EyeLeft.Z * RadianConst * Settings.Instance.EyeSensitivity);
                 }
 
                 if (TrackExpression)
@@ -176,24 +176,24 @@ namespace MeowLL.MeowFace
                             {
                                 case "head":
                                 {
-                                    llMsg.Set(GenericShape.HeadPitch, -float.Parse(subData[1]) * RadianConst);
-                                    llMsg.Set(GenericShape.HeadYaw, float.Parse(subData[2]) * RadianConst);
-                                    llMsg.Set(GenericShape.HeadRoll, float.Parse(subData[3]) * RadianConst);
+                                    llMsg.Set(GenericShape.HeadPitch, -float.Parse(subData[1]) * RadianConst * Settings.Instance.HeadSensitivity);
+                                    llMsg.Set(GenericShape.HeadYaw, float.Parse(subData[2]) * RadianConst * Settings.Instance.HeadSensitivity);
+                                    llMsg.Set(GenericShape.HeadRoll, float.Parse(subData[3]) * RadianConst * Settings.Instance.HeadSensitivity);
                                     break;
                                 }
                                 case "rightEye":
                                 {
                                     //Data has wrong axis..
-                                    llMsg.Set(GenericShape.RightEyePitch, float.Parse(subData[1]) * RadianConst);
-                                    llMsg.Set(GenericShape.RightEyeYaw, -float.Parse(subData[2]) * RadianConst);
-                                    llMsg.Set(GenericShape.RightEyeRoll, float.Parse(subData[3]) * RadianConst);
+                                    llMsg.Set(GenericShape.RightEyePitch, float.Parse(subData[1]) * RadianConst * Settings.Instance.EyeSensitivity);
+                                    llMsg.Set(GenericShape.RightEyeYaw, -float.Parse(subData[2]) * RadianConst * Settings.Instance.EyeSensitivity);
+                                    llMsg.Set(GenericShape.RightEyeRoll, float.Parse(subData[3]) * RadianConst * Settings.Instance.EyeSensitivity);
                                     break;
                                 }
                                 case "leftEye":
                                 {
-                                    llMsg.Set(GenericShape.LeftEyePitch, float.Parse(subData[1]) * RadianConst);
-                                    llMsg.Set(GenericShape.LeftEyeYaw, -float.Parse(subData[2]) * RadianConst);
-                                    llMsg.Set(GenericShape.LeftEyeRoll, float.Parse(subData[3]) * RadianConst);
+                                    llMsg.Set(GenericShape.LeftEyePitch, float.Parse(subData[1]) * RadianConst * Settings.Instance.EyeSensitivity);
+                                    llMsg.Set(GenericShape.LeftEyeYaw, -float.Parse(subData[2]) * RadianConst * Settings.Instance.EyeSensitivity);
+                                    llMsg.Set(GenericShape.LeftEyeRoll, float.Parse(subData[3]) * RadianConst * Settings.Instance.EyeSensitivity);
                                     break;
                                 }
                             }
